@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru" class="has-navbar-fixed-top" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenBox — Главная</title>
+    <!-- Bulma & FontAwesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- ЕДИНЫЕ СТИЛИ ДЛЯ ВСЕХ СТРАНИЦ -->
+    <style>
+        :root { --primary-green: #10ac84; --accent-teal: #00d2d3; --dark-text: #2d3436; }
+        html { scroll-behavior: smooth; }
+        body { background-color: #f9f9f9; font-family: sans-serif; min-height: 100vh; display: flex; flex-direction: column; }
+        .main-content { flex: 1; } /* Прижимает футер к низу */
+        
+        /* Стили Героя */
+        .hero-bg-image {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=2053');
+            background-size: cover; background-position: center;
+        }
+        .hero-title { color: white !important; text-shadow: 0 4px 10px rgba(0,0,0,0.5); font-weight: 800; }
+        .hero-subtitle { color: #e0e0e0 !important; font-weight: 500; max-width: 700px; margin: 0 auto; }
+
+        /* Элементы интерфейса */
+        .navbar { background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); }
+        .button.is-vibrant { background-color: #0984e3; border: none; color: white; box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: transform 0.2s; }
+        .button.is-vibrant:hover { transform: scale(1.05); color: white; }
+        .card { border-radius: 12px; border: none; box-shadow: 0 10px 20px rgba(0,0,0,0.05); height: 100%; transition: transform 0.3s; }
+        .card:hover { transform: translateY(-5px); }
+        .icon-bright { color: var(--primary-green); }
+        
+        /* Активная ссылка в меню */
+        .navbar-item.is-active-page { color: var(--primary-green); font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <!-- ХЕДЕР (ОДИНАКОВЫЙ ДЛЯ ВСЕХ) -->
+    <nav class="navbar is-fixed-top has-shadow" role="navigation" aria-label="main navigation">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item has-text-weight-bold is-size-4 has-text-success" href="index.html">
+                    <span class="icon mr-2"><i class="fas fa-leaf"></i></span>GreenBox
+                </a>
+                <a role="button" class="navbar-burger" data-target="navbarMenu">
+                    <span></span><span></span><span></span>
+                </a>
+            </div>
+            <div id="navbarMenu" class="navbar-menu">
+                <div class="navbar-end">
+                    <a href="index.html" class="navbar-item is-active-page">Главная</a>
+                    <a href="faq.html" class="navbar-item">FAQ</a>
+                    <a href="contacts.html" class="navbar-item">Контакты</a>
+                    <div class="navbar-item">
+                        <a href="contacts.html" class="button is-primary is-rounded">Заказать</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <!-- HERO -->
+        <section class="hero is-large hero-bg-image">
+            <div class="hero-body">
+                <div class="container has-text-centered">
+                    <h1 class="title is-1 is-size-2-mobile hero-title">Вкусная энергия<br>твоего дня</h1>
+                    <h2 class="subtitle is-4 mt-4 hero-subtitle">Сбалансированное питание без сахара и консервантов.</h2>
+                    <div class="buttons is-centered mt-6">
+                        <a href="contacts.html" class="button is-vibrant is-large is-rounded">
+                            <span>Выбрать рацион</span><span class="icon"><i class="fas fa-carrot"></i></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ПРЕИМУЩЕСТВА -->
+        <section class="section has-background-white">
+            <div class="container">
+                <h2 class="title is-2 has-text-centered has-text-dark mb-6">Почему мы?</h2>
+                <div class="columns">
+                    <div class="column is-4">
+                        <div class="card p-5 has-text-centered">
+                            <div class="icon is-large icon-bright mb-4"><i class="fas fa-leaf fa-3x"></i></div>
+                            <h4 class="title is-4">Натурально</h4>
+                            <p>Только фермерские продукты без химии.</p>
+                        </div>
+                    </div>
+                    <div class="column is-4">
+                        <div class="card p-5 has-text-centered">
+                            <div class="icon is-large icon-bright mb-4"><i class="fas fa-chart-pie fa-3x"></i></div>
+                            <h4 class="title is-4">Баланс КБЖУ</h4>
+                            <p>Расчет калорий от профессионалов.</p>
+                        </div>
+                    </div>
+                    <div class="column is-4">
+                        <div class="card p-5 has-text-centered">
+                            <div class="icon is-large icon-bright mb-4"><i class="fas fa-shipping-fast fa-3x"></i></div>
+                            <h4 class="title is-4">Быстрая доставка</h4>
+                            <p>Привезем еду горячей в удобное время.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ФУТЕР (ОДИНАКОВЫЙ ДЛЯ ВСЕХ) -->
+    <footer class="footer has-background-dark">
+        <div class="content has-text-centered has-text-light">
+            <p><strong>GreenBox</strong> © 2025. Многостраничный сайт на Bulma.</p>
+            <div class="buttons is-centered">
+                <a href="#" class="button is-small is-dark"><i class="fab fa-telegram"></i></a>
+                <a href="#" class="button is-small is-dark"><i class="fab fa-vk"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+            if ($navbarBurgers.length > 0) {
+                $navbarBurgers.forEach( el => {
+                    el.addEventListener('click', () => {
+                        const target = el.dataset.target;
+                        const $target = document.getElementById(target);
+                        el.classList.toggle('is-active');
+                        $target.classList.toggle('is-active');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

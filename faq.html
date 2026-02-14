@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru" class="has-navbar-fixed-top" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenBox — FAQ</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root { --primary-green: #10ac84; --dark-text: #2d3436; }
+        body { background-color: #f9f9f9; font-family: sans-serif; min-height: 100vh; display: flex; flex-direction: column; }
+        .main-content { flex: 1; }
+        .navbar { background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); }
+        .navbar-item.is-active-page { color: var(--primary-green); font-weight: bold; }
+
+        /* Стили для Аккордеона */
+        details { transition: all 0.3s; margin-bottom: 1rem; }
+        details[open] summary { border-bottom: 1px solid #eee; margin-bottom: 1rem; color: var(--primary-green); }
+        summary { cursor: pointer; font-weight: bold; font-size: 1.1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+        summary::-webkit-details-marker { display: none; }
+        summary::after { content: '\f078'; font-family: "Font Awesome 6 Free"; font-weight: 900; transition: transform 0.3s; }
+        details[open] summary::after { transform: rotate(180deg); }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar is-fixed-top has-shadow">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item has-text-weight-bold is-size-4 has-text-success" href="index.html">
+                    <span class="icon mr-2"><i class="fas fa-leaf"></i></span>GreenBox
+                </a>
+                <a role="button" class="navbar-burger" data-target="navbarMenu"><span></span><span></span><span></span></a>
+            </div>
+            <div id="navbarMenu" class="navbar-menu">
+                <div class="navbar-end">
+                    <a href="index.html" class="navbar-item">Главная</a>
+                    <a href="faq.html" class="navbar-item is-active-page">FAQ</a>
+                    <a href="contacts.html" class="navbar-item">Контакты</a>
+                    <div class="navbar-item"><a href="contacts.html" class="button is-primary is-rounded">Заказать</a></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-content section">
+        <div class="container" style="max-width: 800px;">
+            <div class="has-text-centered mb-6">
+                <h1 class="title is-2">Часто задаваемые вопросы</h1>
+                <p class="subtitle is-5 has-text-grey">Мы собрали ответы на самые популярные вопросы о нашем сервисе</p>
+            </div>
+
+            <!-- Аккордеон Вопрос 1 -->
+            <details class="box">
+                <summary class="p-2">Как оформить заказ?</summary>
+                <div class="content p-2">
+                    <p>Вы можете оформить заказ на нашем сайте в разделе "Контакты" или позвонив по телефону. Наш менеджер поможет подобрать идеальный рацион.</p>
+                </div>
+            </details>
+
+            <!-- Аккордеон Вопрос 2 -->
+            <details class="box">
+                <summary class="p-2">В какое время происходит доставка?</summary>
+                <div class="content p-2">
+                    <p>Мы доставляем рационы ежедневно: утренняя доставка с 06:00 до 11:00 и вечерняя с 19:00 до 23:00. Вы можете выбрать удобный часовой интервал.</p>
+                </div>
+            </details>
+
+            <!-- Аккордеон Вопрос 3 -->
+            <details class="box">
+                <summary class="p-2">Можно ли менять блюда в меню?</summary>
+                <div class="content p-2">
+                    <p>Да, у нас есть функция "Конструктор меню". При заказе подписки на месяц вы можете исключать до 3-х ингредиентов, на которые у вас аллергия.</p>
+                </div>
+            </details>
+
+            <!-- Аккордеон Вопрос 4 -->
+            <details class="box">
+                <summary class="p-2">Как считается КБЖУ?</summary>
+                <div class="content p-2">
+                    <p>Все блюда взвешиваются на лабораторных весах. Расчет производит сертифицированный нутрициолог с использованием профессионального ПО.</p>
+                </div>
+            </details>
+            
+            <div class="has-text-centered mt-6">
+                <p>Не нашли ответ?</p>
+                <a href="contacts.html" class="button is-text">Напишите нам</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer has-background-dark">
+        <div class="content has-text-centered has-text-light">
+            <p><strong>GreenBox</strong> © 2025.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Скрипт для бургера
+        document.addEventListener('DOMContentLoaded', () => {
+            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+            $navbarBurgers.forEach( el => {
+                el.addEventListener('click', () => {
+                    const target = el.dataset.target;
+                    document.getElementById(target).classList.toggle('is-active');
+                    el.classList.toggle('is-active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
